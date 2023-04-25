@@ -5,6 +5,9 @@ import { Sidebar } from './components/Sidebar';
 import styles from './App.module.css'
 
 import './global.css';
+import { Router } from './Routes';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from './styles/themes/default';
 
 
 const posts: PostType[] = [
@@ -42,7 +45,9 @@ const posts: PostType[] = [
 export function App() {
   return (
     <div>
-
+      <ThemeProvider theme={defaultTheme}>
+        <Router />
+      </ThemeProvider>
       <Header />
 
       <div className={styles.wrapper}>
